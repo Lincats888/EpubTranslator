@@ -1,8 +1,10 @@
-# EPUB 双语翻译器
+#  EPUB 双语翻译器
 
-将英文 EPUB 翻译为中英双语（或纯中文）EPUB 的 CLI 工具。逐段翻译 HTML，保留原始格式、图片、目录结构和代码块。
+> 将英文 EPUB 翻译为中英双语（或纯中文）EPUB 的 CLI 工具。逐段翻译 HTML，保留原始格式、图片、目录结构和代码块。
 
-## 功能特性
+[English](README_EN.md)
+
+##  功能特性
 
 - **中英双语输出** — 每段原文后紧跟中文译文，用灰白底样式区分
 - **纯中文模式** — 可切换为仅保留中文译文
@@ -12,7 +14,7 @@
 - **断点续传** — 翻译中断后重跑跳过已完成文件
 - **批量翻译** — 每 10 段一组调用 API，高效省 token
 
-## 安装
+##  安装
 
 ```bash
 git clone https://github.com/Lincats888/EpubTranslator.git
@@ -30,7 +32,7 @@ pip install -r requirements.txt
 | `openai` | DeepSeek API 调用（兼容接口） |
 | `ebooklib` | EPUB 读写 |
 
-## 快速开始
+##  快速开始
 
 ```bash
 # 1. 复制配置模板，填入你的 DeepSeek API Key
@@ -42,7 +44,7 @@ python main.py translate book.epub
 # 3. 输出在 output/ 目录下
 ```
 
-## 配置
+##  配置
 
 `config.json` 示例：
 
@@ -66,7 +68,7 @@ python main.py translate book.epub
 | `code_selectors` | 跳过翻译的 CSS 选择器，如 `["pre", "code", "pre.programlisting"]` |
 | `output_mode` | `"bilingual"`（中英双语）或 `"chinese_only"`（纯中文） |
 
-## 命令
+##  命令
 
 ```bash
 # 一键全流程：解析 → 翻译 → 构建
@@ -83,7 +85,7 @@ python main.py translate book.epub -o myoutput/ -t mytemp/
 python main.py translate book.epub -c myconfig.json
 ```
 
-## 项目结构
+##  项目结构
 
 ```
 EpubTranslator/
@@ -101,7 +103,7 @@ EpubTranslator/
 └── test_comprehensive.py    # 端到端集成测试
 ```
 
-## 数据流
+##  数据流
 
 ```
 book.epub ──parse──> temp/html/*.xhtml + temp/resources/* + temp/metadata.json
@@ -109,7 +111,7 @@ temp/html/* ──run──> temp/html/*.xhtml（原文 + 译文）
 temp/* ──build──> output/<书名>_bilingual.epub
 ```
 
-## 测试
+## 🧪 测试
 
 ```bash
 # 生成测试 EPUB 并运行集成测试（需要 API key）
