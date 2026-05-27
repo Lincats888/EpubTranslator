@@ -1,0 +1,8 @@
+{
+    "api_key": "sk-xxx",
+    "model": "deepseek-chat",
+    "temperature": 0.3,
+    "max_tokens": 2000,
+    "code_selectors": ["pre", "code"],
+    "output_mode": "bilingual"
+}
