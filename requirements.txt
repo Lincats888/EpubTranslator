@@ -1,0 +1,6 @@
+typer
+rich
+beautifulsoup4
+lxml
+openai
+ebooklib
